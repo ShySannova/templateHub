@@ -1,4 +1,4 @@
-header {
+/* header {
     background-color: rgb(218, 203, 203);
     padding: 20px;
     display: flex;
@@ -21,4 +21,18 @@ header a {
 
 a:hover {
     color: gray !important;
+} */
+
+/* header {
+  background-color: rgb(218, 203, 203);
+  padding: 10px 20px;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > ul {
+  gap: 1rem;
+} */

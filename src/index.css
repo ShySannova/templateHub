@@ -1,7 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* :root {
@@ -21,15 +25,15 @@
 } */
 
 :root {
-    --bg_1: rgb(20, 20, 20);
-    --bg_2: #000000;
-    --txt_1: #ffffff;
-    --txt_2: #333333;
-    --fmbrd: rgba(200, 200, 200, 0.5);
+  --bg_1: rgb(20, 20, 20);
+  --bg_2: #000000;
+  --txt_1: #ffffff;
+  --txt_2: #333333;
+  --fmbrd: rgba(200, 200, 200, 0.5);
 }
 body {
-    min-height: 100svh;
-    align-items: center;
+  min-height: 100svh;
+  align-items: center;
 }
 /* 
 a {
