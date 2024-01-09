@@ -10,47 +10,47 @@ import Login from "./pages/DashPage/Login/Login";
 import Register from "./pages/DashPage/Register/Register";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        element: <ClientUI />,
         children: [
-            {
-                element: <ClientUI />,
-                children: [
-                    {
-                        index: true,
-                        element: <HomePage />,
-                    },
-                ],
-            },
-            {
-                path: "dashboard",
-                element: (
-                    <ProtectPrivate>
-                        <DashLayout />
-                    </ProtectPrivate>
-                ),
-                children: [
-                    {
-                        index: true,
-                        element: <Dashpage />,
-                    },
-                ],
-            },
-            {
-                path: "dashboard/login",
-                element: <Login />,
-            },
-            {
-                path: "dashboard/register",
-                element: <Register />,
-            },
+          {
+            index: true,
+            element: <HomePage />,
+          },
         ],
-    },
+      },
+      {
+        path: "dashboard",
+        element: (
+          <ProtectPrivate>
+            <DashLayout />
+          </ProtectPrivate>
+        ),
+        children: [
+          {
+            index: true,
+            element: <Dashpage />,
+          },
+        ],
+      },
+      {
+        path: "dashboard/login",
+        element: <Login />,
+      },
+      {
+        path: "dashboard/register",
+        element: <Register />,
+      },
+    ],
+  },
 ]);
 
 const App = () => {
-    return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
