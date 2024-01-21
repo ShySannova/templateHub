@@ -1,5 +1,5 @@
 .client-body {
-    width: 100dvw;
+    width: 100%;
     background-color: rgb(54, 52, 52);
     min-height: 100vh;
     color: white;
@@ -7,4 +7,16 @@
     justify-content: center;
     flex-direction: column;
     
+}
+main{
+    max-width: 100%;
+    padding: 2rem;
+}
+main .templates{
+    padding: 0;
+}
+@media only screen and (min-width:768px){
+    .client-body main {
+        padding: 2rem 5rem;
+    }
 }

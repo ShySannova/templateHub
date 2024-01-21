@@ -10,18 +10,22 @@ const Header = () => {
 
     return (
         <header>
-            <Link to={"/"}>Template-Hub</Link>
+            <Link id="logo" to={"/"}>Template-Hub</Link>
+            
             <nav>
-                <ul>
-                    <NavLink to={"/"}>home</NavLink>
-                    <NavLink to={"/about"}>about us</NavLink>
-                    <NavLink to={"/contact"}>contact</NavLink>
+                <button className="menu_bar"></button>
+                <input type="checkbox" />
+                <ul className="nav_list">
+                    <li className="list_items"><NavLink to={"/"}>home</NavLink></li>
+                    <li className="list_items"><NavLink to={"/about"}>about us</NavLink></li>
+                    <li className="list_items"><NavLink to={"/contact"}>contact</NavLink></li>
                 </ul>
                 <button
                     className="header_btn"
                     onClick={() => { setIsDialogOpen(!isDialogOpen) }}
                 >login</button>
                 {isDialogOpen && <DialogBox setIsDialogOpen={setIsDialogOpen} />}
+                <div className="menu_bar"></div>
             </nav>
         </header>
     );

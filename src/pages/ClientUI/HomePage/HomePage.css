@@ -1,10 +1,13 @@
 main{
+    width: 100%;
     display: grid;
+    justify-content: center;
+    /* align-items: center; */
     
 }
 .templates{
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;

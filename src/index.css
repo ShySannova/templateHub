@@ -11,7 +11,11 @@
     --txt_2: #333333;
     --fmbrd: rgba(200, 200, 200, 0.5);
 }
-
+body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 a{
     text-decoration: none;
     color: inherit;
@@ -24,6 +28,7 @@ a.active{
 main{
     min-height: 100vh;
     display: flex;
+   
 }
 
 

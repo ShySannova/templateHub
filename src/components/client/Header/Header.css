@@ -5,6 +5,7 @@
     font-family: sans-serif;
 }
 :root{
+    --headerbg: slategray;
     --contactbg: rgb(32, 208, 132);
     --contactbg_hover: rgba(32, 208, 132, 0.559);
     --loginbg: #5555fe;
@@ -12,39 +13,75 @@
 }
 header {
     width: 100%;
-    background-color: slategray;
+    background-color: var(--headerbg);
     padding: 20px 2rem;
+    padding-right: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-transform: capitalize;
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 header nav{
-    
+    /* position: relative; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
+header nav .menu_bar{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    right: 2rem;
 
-header nav ul {
-    list-style: none;
+}
+header nav .menu_bar::before,
+header nav .menu_bar::after{
+    content: "";
     display: flex;
+    position: absolute;
+    background-color: white;
+    width: 28px;
+    height: 3px;
+    border-radius: 5px;
+}
+header nav .menu_bar::before{
+    top: -8px;
+}
+header nav .menu_bar::after{
+    top: 8px;
+}
+header nav input[type="checkbox"]{
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    position: absolute;
+    right: 1.6rem;
+    z-index: 1;
+    opacity: 0;
+}
+header nav .nav_list {
+    list-style: none;
+    display: none;
     align-items: center;
     gap: 1rem;
 }
-header nav ul a:last-child{
+header nav .nav_list .list_items:last-child{
     background-color: transparent;
     padding: .5rem 2rem;
     border: 2px solid var(--contactbg);
     border-radius: 5px;
     transition: .3s;
     color: white;
+    cursor: pointer;
 }
-header nav ul a:last-child:hover{
+header nav .nav_list .list_items:last-child:hover{
     background-color: var(--contactbg_hover);
     color: gray;
 }
@@ -72,6 +109,21 @@ header a {
     header {
         padding: 20px 5rem;
        
+    }
+    header nav{
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    header nav .nav_list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        display: flex;
     }
 }
 

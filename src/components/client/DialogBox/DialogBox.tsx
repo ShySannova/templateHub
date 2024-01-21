@@ -15,7 +15,7 @@ const DialogBox: React.FC<DialogBoxProps> = ({ setIsDialogOpen }) => {
             }}
         >
             <div className="box" onClick={(e) => e.stopPropagation()}>
-                <h2>How do you want to use our services?</h2>
+                <h3>How do you want to use our services?</h3>
                 <div className="option">
                     <Link to="/login" onClick={() => { setIsDialogOpen(false) }}>As User</Link>
                     <Link to="/dashboard/login">As Developer</Link>
