@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 :root {
     --bg_1: rgb(20, 20, 20);
     --bg_2: #000000;
@@ -14,8 +13,31 @@
 body{
     width: 100%;
     display: flex;
-    justify-content: center;
+    font-family: sans-serif;
 }
+/***  HEADER STYLES BEGINGS HERE  ***/
+header{
+    background-color: var(--bg_2);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+@media only screen and (min-width:768px){
+    header{
+        padding: 1rem 5rem;
+    }
+    header nav{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    header nav .nav_list{
+        display: flex;
+        gap: 1rem;
+    }
+}
+/***  HEADER STYLES ENDS HERE  ***/
 a{
     text-decoration: none;
     color: inherit;
@@ -30,8 +52,6 @@ main{
     display: flex;
    
 }
-
-
 .auth{
     min-height: 100vh;
     background-color: var(--bg_1);
