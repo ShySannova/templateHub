@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <header>
-            <Link id="logo" to={"/"}>Template-Hub</Link>
+            <Link id="logo" to={"/"} style={{color:"white", fontSize:"2rem"}}>Template-Hub</Link>
             
             <nav>
                 <button className="menu_bar"></button>
