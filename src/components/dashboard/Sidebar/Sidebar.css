@@ -1,0 +1,56 @@
+.dashboard .sidebar{
+    flex: 1;
+    z-index: 3;
+    background-color: var(--bg-secondary);
+    padding-block: var(--spacer);
+}
+
+
+.sidebar .userInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s);
+}
+
+.user-img-container{
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+}
+
+
+.sidebar .links{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+    padding-block: var(--spacer);
+    text-transform: uppercase;
+}
+
+
+.sidebar .links li {
+    display: flex;
+}
+
+
+.sidebar .links a{
+    width: 100%;
+    padding: var(--s);
+}
+
+.sidebar .links a:hover,
+.sidebar .links a.active{
+    background-color: var(--bg-primary);
+}
+
+.sidebar .links a.active{
+    font-weight: var(--fw-bold);
+}
+
+
+
+
+

@@ -1,0 +1,21 @@
+.dashboard-body {
+    width: 100%;
+    height: 100vh;
+    padding: var(--spacer-2);
+    display: flex;
+    gap: var(--spacer-2);
+}
+
+.dashboard main{
+    flex: 6;
+    background-color: var(--bg-secondary);
+}
+
+.dashboard section{
+    width: 100%;
+    height: 100%;
+    padding: var(--spacer);
+}
+
+
+

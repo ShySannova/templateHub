@@ -1,0 +1,12 @@
+.homepage{
+    flex-direction: column;
+}
+
+.templates-container{
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: calc(var(--spacer) * 2) ;
+}
