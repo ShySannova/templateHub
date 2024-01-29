@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 main{
     width: 100%;
     display: grid;
@@ -13,4 +14,17 @@ main{
     justify-content: center;
     /* align-items: center; */
     gap: 2rem;
+=======
+.homepage{
+    flex-direction: column;
+}
+
+.templates-container{
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: calc(var(--spacer) * 2) ;
+>>>>>>> b6133d22b37dc85d5449b885ca6c3741a33c1936
 }

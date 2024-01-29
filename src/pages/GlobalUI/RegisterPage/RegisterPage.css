@@ -1,0 +1,27 @@
+
+
+.input-box .username{
+    /***This is input container***/
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box .username label{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+    color: var(--clr-primary);
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    padding-block: .25rem;
+    padding-inline: var(--m);
+    border: 2px solid var(--clr-accent);
+}
+

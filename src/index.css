@@ -1,71 +1,104 @@
-* {
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+/* === css reset === */
+* ,
+*::after,
+*::before{
+
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+
+
+
 :root {
-    --bg_1: rgb(20, 20, 20);
-    --bg_2: #000000;
-    --txt_1: #ffffff;
-    --txt_2: #333333;
-    --fmbrd: rgba(200, 200, 200, 0.5);
-}
-body{
-    width: 100%;
-    display: flex;
-    font-family: sans-serif;
-}
-/***  HEADER STYLES BEGINGS HERE  ***/
-header{
-    background-color: var(--bg_2);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    --bg-primary: #ffffff; /* Light mode background color */
+    --clr-primary: #333333; /* Light mode text color */
+    --bg-secondary: #ffcc00; /* Light mode secondary background color */
+    --clr-secondary: #0066cc; /* Light mode secondary text color */
+    --clr-rgba: rgba(0, 0, 0, 0.1)
+    --box-shadow: 0 2px 4px var(--clr-rgba); /* Box shadow for cards */
     
-}
-@media only screen and (min-width:768px){
-    header{
-        padding: 1rem 5rem;
+    --f-heading: 2rem; /* Custom variable for heading font size */
+    --f-sub-heading: 1.5rem; /* Custom variable for sub-heading font size */
+    
+    --spacer: 1rem; /* Custom variable for consistent spacing */
+    --spacer-2: 2rem; 
+    --spacer-em: 1em; 
+  
+    --fw-light: 300; /* Font weight for light text */
+    --fw-normal: 400; /* Font weight for normal text */
+    --fw-bold: 700; /* Font weight for bold text */
+    
+    --clr-imp: #e60000; /* Color for important text */
+    --clr-active: #cc3300; /* Color for active links */
+    --clr-accent: #4CAF50; /* Color for call-to-action elements */
+    --clr-accent-hover:#4caf4fce;
+
+    --s: .625rem; /* === 10px in rem === */
+    --m: 0.9375rem; /* === 15px in rem === */
+    --l: 1.25rem; /* === 20px in rem === */
+  
+    /* ... other variables ... */
+  }
+  
+  /* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1a1a1a; /* Dark mode background color */
+        --clr-primary: #ffffff; /* Dark mode text color */
+        --bg-secondary: #ffcc00; /* Dark mode secondary background color */
+        --clr-secondary: #0066cc; /* Dark mode secondary text color */
+        --clr-rgba: rgba(255, 255, 255, 0.1);
+        --box-shadow: 0 2px 4px var(--clr-rgba); /* Adjust shadow color for dark mode */
+        
+        --clr-imp: #ff6666; /* Color for important text in dark mode */
+        --clr-active: #ff9900; /* Color for active links in dark mode */
+        --clr-accent: #4CAF50; /* Color for call-to-action elements in dark mode */
+        --clr-accent-hover:#4caf4fa8;
+        
     }
-    header nav{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    header nav .nav_list{
-        display: flex;
-        gap: 1rem;
-    }
-}
-/***  HEADER STYLES ENDS HERE  ***/
-a{
-    text-decoration: none;
-    color: inherit;
 }
 
-a.active{
-    color: rgb(95, 226, 43);
+/* === for smooth scrolling for entire scrollable element === */
+html{
+    scroll-behavior: smooth;
 }
 
-main{
-    min-height: 100vh;
-    display: flex;
-   
-}
-.auth{
-    min-height: 100vh;
-    background-color: var(--bg_1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Example usage */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--clr-primary);
 }
 
+h1 {
+    font-size: var(--f-heading);
+    font-weight: var(--fw-bold);
+}
+
+h2 {
+    font-size: var(--f-sub-heading);
+    font-weight: var(--fw-bold);
+}
+
+p {
+    font-size: 1rem; /* Default font size */
+    font-weight: var(--fw-normal);
+}
+
+
+button,
 .btn {
-    background-color: #5555fe;
-    color: var(--txt_1);
-    padding: 10px 20px;
-    border: none;
-    height: 2.5em;
+    background-color: var(--clr-accent);
+    color: #ffffff; /* White text on cta button */
+    padding-block: var(--s);
+    padding-inline: var(--l);
+    border: 1px solid;
+    border-color: var(--clr-accent);
+
     font-size: 1em;
     letter-spacing: 0.1em;
     cursor: pointer;
@@ -73,14 +106,53 @@ main{
     border-radius: 8px;
 }
 
-/* @media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
-}  */
+
+button:hover,
+.btn:hover{
+    background-color: var(--clr-accent-hover);
+}
+
+/* === reset for link default style === */
+a{
+    text-decoration: none;
+}
+
+a.active{
+    color: var(--clr-active);
+} 
+
+ul{
+    list-style: none;
+}
+
+/* =================================
+    setting custom default style
+================================= */
+
+
+.auth{
+    min-height: 100vh;
+    background-color: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ====================
+    utilities class
+======================= */
+
+.container{
+    width: 80%;
+    margin-inline: auto;
+}
+
+.important-text {
+    color: var(--clr-imp);
+}
+
+.active-link {
+    color: var(--clr-active);
+}
+

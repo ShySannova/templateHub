@@ -26,7 +26,11 @@ const useRegister = () => {
             if (res.ok) {
                 const data = await res.json();
                 handleToast(true, data.message);
+<<<<<<< HEAD
                 navigate("/dashboard/login");
+=======
+                navigate("/login");
+>>>>>>> b6133d22b37dc85d5449b885ca6c3741a33c1936
             } else {
                 console.error("User Exists...!:", res.statusText);
                 handleToast(true, "User Exists...!:");

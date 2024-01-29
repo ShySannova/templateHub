@@ -7,14 +7,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.8);
 
+=======
+    background-color: rgba(0, 0, 0, 0.685);
+    z-index: 100;
+    /* isolation: isolate; */
+>>>>>>> b6133d22b37dc85d5449b885ca6c3741a33c1936
 }
 
 .login-dialog .box{
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     gap: 2rem;
     background-color: transparent;
     padding: 2rem;
@@ -34,13 +41,43 @@
     width: 120px;
     aspect-ratio: 1/1;
     background-color: rgb(20, 112, 152);
+=======
+    gap: var(--spacer);
+    background-color: transparent;
+    padding: var(--spacer-2);
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--clr-accent);
+    color: var(--clr-accent);
+}
+.login-dialog .box .option{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    gap: var(--spacer-2);
+}
+
+.login-dialog .box .option a {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: var(--clr-accent);
+>>>>>>> b6133d22b37dc85d5449b885ca6c3741a33c1936
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     transition: .3s;
+<<<<<<< HEAD
 }
 .login-dialog .box .option a:hover{
     background-color: rgb(32, 162, 218);
     box-shadow: 0 1px 6px rgb(84, 84, 84);
+=======
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+}
+
+.login-dialog .box .option a:hover{
+    background-color: var(--clr-accent-hover);
+    box-shadow: var(--box-shadow);
+>>>>>>> b6133d22b37dc85d5449b885ca6c3741a33c1936
 }

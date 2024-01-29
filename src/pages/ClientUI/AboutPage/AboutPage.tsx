@@ -3,7 +3,9 @@ import React from 'react'
 
 const AboutPage: React.FC = () => {
     return (
-        <main>About Page</main>
+
+        <main className="about">AboutPage</main>
+
     )
 }
 

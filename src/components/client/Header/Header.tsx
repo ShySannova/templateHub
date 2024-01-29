@@ -1,33 +1,52 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
-import { useState } from "react";
-import DialogBox from "../DialogBox/DialogBox";
+
 
 const Header = () => {
 
 
-    const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
-
     return (
         <header>
-            <Link id="logo" to={"/"} style={{color:"white", fontSize:"2rem"}}>Template-Hub</Link>
-            
-            <nav>
-                <input type="checkbox" />
-                <button className="menu_bar"></button>
-                
-                <ul className="nav_list">
-                    <NavLink to={"/"}>home</NavLink>
-                    <NavLink to={"/about"}>about us</NavLink>
-                    <NavLink to={"/contact"}>contact</NavLink>
-                </ul>
-                <button
-                    className="header_btn btn"
-                    onClick={() => { setIsDialogOpen(!isDialogOpen) }}
-                >login</button>
-                {isDialogOpen && <DialogBox setIsDialogOpen={setIsDialogOpen} />}
-                <div className="menu_bar"></div>
-            </nav>
+            <div className="container header-container">
+
+                <nav className="main-nav">
+                    <div className="nav-bar">
+                        <i className='bx bx-menu sidebarOpen' ></i>
+                        <span className="logo navLogo"><Link to={"/"}>TemplateHub</Link></span>
+                        <div className="menu">
+                            <div className="logo-toggle">
+                                <span className="logo"><Link to={"/"}>TemplateHub</Link></span>
+                                <i className='bx bx-x siderbarClose'></i>
+                            </div>
+                            <ul className="nav-links">
+                                <li><NavLink to={"/"}>Home</NavLink></li>
+                                <li><NavLink to={"/about"}>About</NavLink></li>
+                                <li><NavLink to={"/"}>Services</NavLink></li>
+                                <li><NavLink to={"/contact"}>Contact</NavLink></li>
+                                <li><NavLink to={"/login"}>Developer</NavLink></li>
+                            </ul>
+                        </div>
+                        <div className="darkLight-searchBox">
+                            <div className="dark-light">
+                                <i className='bx bx-moon moon'></i>
+                                <i className='bx bx-sun sun'></i>
+                            </div>
+                            <div className="searchBox">
+                                <div className="searchToggle">
+                                    <i className='bx bx-x cancel'></i>
+                                    <i className='bx bx-search search'></i>
+                                </div>
+                                <div className="search-field">
+                                    <input type="text" placeholder="Search..." />
+                                    <i className='bx bx-search'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
         </header>
     );
 };

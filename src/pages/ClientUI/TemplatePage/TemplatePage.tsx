@@ -2,22 +2,26 @@ import { useLocation } from "react-router-dom"
 
 
 const TemplatePage = () => {
-    const { template } = useLocation()?.state;
+    const { template } = useLocation().state;
     return (
-        <div>
-            <div>
-                <img width={200} src={template?.main_image} alt="" />
-            </div>
-            <div>
+        <main className="template">
+            <section className="container template-container">
                 <div>
-                    <h2>{template?.template_name}</h2>
-                    <p>{template?.stacks.join(", ")}</p>
+                    <img width={200} src={template?.main_image} alt="" />
                 </div>
                 <div>
-                    <p>{template?.description}</p>
+                    <div>
+                        <h2>{template?.template_name}</h2>
+                        <p>{template?.stacks.join(", ")}</p>
+                    </div>
+                    <div>
+                        <p>{template?.description}</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+        </main>
+
     )
 }
 

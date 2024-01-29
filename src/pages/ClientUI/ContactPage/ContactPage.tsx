@@ -5,7 +5,9 @@ import React from 'react'
 
 const ContactPage: React.FC = () => {
     return (
-        <div>ContactPage</div>
+
+        <main className="contact">ContactPage</main>
+
     )
 }
 
