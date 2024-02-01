@@ -1,54 +1,202 @@
-section {
-    overflow-y: scroll;
+
+.edit-template form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-2);
 }
 
-form {
+.panel-container{
+    display: flex;
+    gap: var(--spacer-2);
+}
+
+.main-panel{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+}
+
+.first-row{
+    display: flex;
+    gap: var(--spacer-2);
+}
+
+.first{
+    flex: 1;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+    padding: var(--spacer);
+    border-radius: var(--size-s);
+}
+
+.first input{
+    padding-block: var(--size-m);
+    padding-inline: var(--size-l);
+}
+
+.second{
+    flex: 1;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+    padding: var(--spacer);
+    border-radius: var(--size-s);
+}
+
+.second input{
     width: 100%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
+    padding-block: var(--size-m);
+    padding-inline: var(--size-m);
 }
 
-input,
-label,
-textarea,
-button {
-    display: block;
-    margin-bottom: 15px;
+.second >div{
+    display: flex;
+    gap: var(--spacer);
+}
+
+.desc-area{
+    display: flex;
+    padding: var(--spacer);
+    background-color: var(--bg-primary);
+    gap: var(--spacer-2);
+    border-radius: var(--size-s);
+}
+
+.desc-area textarea{
     width: 100%;
+    resize: vertical;
+    padding-block: var(--size-m);
+    padding-inline: var(--size-l);
 }
 
-input,
-textarea {
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 14px;
+.side-panel{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-2);
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
+.combo-container{
+    width: 100%;
+    display: flex;
+    gap: var(--spacer);
 }
 
-button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 3px;
+.panel{
+    flex: 1;
+}
+
+.save-as-panel{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel .heading{
+    background-color: var(--bg-primary);
+    padding-block: var(--spacer);
+    text-align: center;
+    border-top-left-radius: var(--size-s);
+    border-top-right-radius: var(--size-s);
+}
+
+.radios{
+    display: flex;
+    gap: var(--spacer);
+    padding-block: var(--spacer);
+    border: 4px solid;
+    border-color: var(--bg-primary);
+    border-bottom-left-radius: var(--size-s);
+    border-bottom-right-radius: var(--size-s);
+}
+
+.radios label{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacer);
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+.break{
+    border-right: 4px solid var(--bg-primary);
 }
 
-.checkbox {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 2fr;
-    gap: 50px;
-    font-weight: bold;
+.display-area{
+    width: 100%;
+    height: 200px;
+    padding: var(--spacer);
+    border: 4px solid;
+    border-color: var(--bg-primary);
+    columns: 2;
+    overflow: auto;
 }
+
+.feature-display-area{
+    width: 100%;
+    max-height: 380px;
+    padding: var(--spacer);
+    border: 4px solid;
+    border-color: var(--bg-primary);
+    overflow: auto;
+}
+
+.tech-display-area{
+   columns: 4;
+}
+
+.keyword,
+.stack,
+.feature,
+.tech
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-primary);
+    padding-left: var(--size-s);
+    margin-bottom: var(--size-s);
+}
+
+.keyword-delete,
+.stack-delete,
+.feature-delete,
+.tech-delete
+{
+    background-color: var(--clr-imp);
+    padding-block: var(--size-s);
+    padding-inline: var(--size-m);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+}
+
+.keyword-input-container,
+.stack-input-container,
+.feature-input-container,
+.tech-input-container
+{
+    padding: var(--spacer);
+    background-color: var(--bg-primary);
+    display: flex;
+    gap: var(--spacer);
+}
+
+.keyword-input-container input,
+.stack-input-container input,
+.tech-input-container input,
+.feature-input-container input
+{
+    width: 100%;
+    padding-inline: var(--size-m);
+}
+
+.update-btn{
+    width: 100%;
+}
+
+

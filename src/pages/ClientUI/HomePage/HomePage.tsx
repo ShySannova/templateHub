@@ -4,9 +4,12 @@ import useTemplate from "../../../hooks/useTemplate";
 import { Template } from "../../../utils/types";
 
 import TemplateCard from "../../../components/client/TemplateCard/TemplateCard";
+import { useParams } from "react-router-dom";
 
 const HomePage: React.FC = () => {
-    const { templates }: { templates: Template[] } = useTemplate();
+
+    const params = useParams()
+    const { templates }: { templates: Template[] } = useTemplate(params);
 
 
     return (

@@ -1,12 +1,13 @@
 .toast {
     width: fit-content;
     padding: 20px 40px;
-    background-color: aqua;
+    background-color: var(--clr-secondary);
     position: fixed;
     bottom: 10px;
     right: -100%;
     transition: 0.5s ease-in;
     text-transform: capitalize;
+    color: var(--clr-primary);
 }
 
 .toast::before {
@@ -16,7 +17,7 @@
     top: 0;
     width: 10px;
     height: 100%;
-    background-color: red;
+    background-color: var(--clr-imp);
 }
 
 .active {

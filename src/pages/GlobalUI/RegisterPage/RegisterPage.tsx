@@ -65,7 +65,7 @@ const RegisterPage = () => {
                             }}
                             required
                         />
-                        <label htmlFor="confirm_password">Confirm password</label>
+                        <label htmlFor="confirm_password">Password</label>
                     </div>
                 </div>
 

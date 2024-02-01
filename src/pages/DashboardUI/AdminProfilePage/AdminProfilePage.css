@@ -1,29 +1,38 @@
 
-.heading{
-    padding-block: 20px;
+.dashpage{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-2);
+}
+
+
+.dashpage .heading{
+    padding-block: var(--spacer);
 }
 
 .dash-container{
     display: flex;
-    padding-block: var(--s);
 }
+
 .dash-first{
     flex: 2;
 }
+
 .dash-last{
     flex:6;
     font-weight: var(--fw-normal);
+    display: flex;
+    gap: var(--spacer);
 }
 
-.clr-schm-contain{
+.clr-schm-container{
     display: flex;
-    justify-content: start;
-    gap: 50px;
+    gap: var(--spacer-2);
 }
 
 .clr-container{
     width: 40px;
-    height: 40px;
+    aspect-ratio: 1/1;
     display: flex;
     border-radius: 100%;
     background-color: var(--bg-primary);
@@ -35,16 +44,16 @@
     width: 20px;
 }
 .bx1{
-    background-color: var(--dsh-b-sch1);
+    background-color: red;
 }
 .bx2{
-    background-color: var(--dsh-t-sch1);
+    background-color: black;
 }
 .bx3{
-    background-color: var(--dsh-m-sch1);
+    background-color: green;
 }
 .bx4{
-    background-color: var(--dsh-s-sch1);
+    background-color: blue;
 }
 
 input{

@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
-import Layout from "./components/Layout/Layout";
+import Layout from "./components/global/Layout/Layout";
 import ClientLayout from "./components/client/ClientLayout/ClientLayout";
 
 import HomePage from "./pages/ClientUI/HomePage/HomePage";
@@ -18,7 +18,7 @@ const TemplatePage = lazy(() => import("./pages/ClientUI/TemplatePage/TemplatePa
 
 const DashLayout = lazy(() => import("./components/dashboard/DashLayout/DashLayout"))
 const DashboardPage = lazy(() => import("./pages/DashboardUI/DashboardPage/DashboardPage"))
-const ProtectPrivate = lazy(() => import("./components/ProtectPrivate/ProtectPrivate"))
+const ProtectPrivate = lazy(() => import("./components/global/ProtectPrivate/ProtectPrivate"))
 const AdminProfilePage = lazy(() => import("./pages/DashboardUI/AdminProfilePage/AdminProfilePage"))
 const MediaPage = lazy(() => import("./pages/DashboardUI/MediaPage/MediaPage"))
 const CreateTemplatePage = lazy(() => import("./pages/DashboardUI/CreateTemplatePage/CreateTemplatePage"))
@@ -138,14 +138,14 @@ const router = createBrowserRouter([
                         ]
                     },
 
-                ]
+                ],
 
             },
             {
                 path: "/login",
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <LoginPage />,
+                        <LoginPage />
                     </Suspense>
                 )
             },
@@ -153,7 +153,7 @@ const router = createBrowserRouter([
                 path: "/register",
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <RegisterPage />,
+                        <RegisterPage />
                     </Suspense>
                 )
             },
@@ -161,7 +161,7 @@ const router = createBrowserRouter([
                 path: "/forgot-password",
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <ForgotPasswordPage />,
+                        <ForgotPasswordPage />
                     </Suspense>
                 )
             },
@@ -169,7 +169,7 @@ const router = createBrowserRouter([
                 path: `/reset-password/:resetPassToken`,
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>
-                        <ResetPasswordPage />,
+                        <ResetPasswordPage />
                     </Suspense>
                 )
             },

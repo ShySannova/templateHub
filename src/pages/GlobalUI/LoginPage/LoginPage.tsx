@@ -58,6 +58,9 @@ const LoginPage = () => {
                     <input type="checkbox" name="checkbox" id="checkbox" onChange={(e) => { setIsTrusted(e.target.checked) }} />
                     <label htmlFor="checkbox">Trust this device</label>
                 </div>
+                <div>
+                    <Link to={"/forgot-password"}>Forgot Password ?</Link>
+                </div>
                 <button
                     type="submit"
                     disabled={!email || !password}

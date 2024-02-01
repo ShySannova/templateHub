@@ -2,41 +2,20 @@ import "./AdminProfilePage.css"
 
 import useLogout from "../../../hooks/useLogout";
 import { useOutletContext } from "react-router-dom";
-import { UserInfo } from "../../../utils/types";
-import { CHANGE_PASSWORD_URL } from "../../../utils/constant";
-import useToast from "../../../hooks/useToast";
+import { OutletContextType } from "../../../utils/types";
+import useChangePassword from "../../../hooks/useChangePassword";
 
-type OutletContextType = [UserInfo, boolean];
 
 
 
 
 
 const AdminProfilePage = () => {
-    const handleChangePassword = async () => {
-        try {
-            const res = await fetch(CHANGE_PASSWORD_URL, {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ email: "abc@gmail.com", newPassword: "Admin" }),
-                credentials: "include"
-            })
 
-
-            const data = await res.json()
-            handleToast(true, data.message)
-        } catch (error) {
-            console.error(error)
-            handleToast(true, 'server error try again later')
-        }
-
-
-    }
     const [userInfo, loading]: OutletContextType = useOutletContext()
+    const { handleChangePassword, setNewpassword, newPassword } = useChangePassword()
     const { handleLogout } = useLogout();
-    const { handleToast } = useToast()
+
     return (
         <main>
             <section className="dashpage">
@@ -45,7 +24,7 @@ const AdminProfilePage = () => {
                     <div className="dash-first">
                         <span>Admin Color Scheme</span>
                     </div>
-                    <div className="dash-last clr-schm-contain">
+                    <div className="dash-last clr-schm-container">
                         <div>
                             <span>Default</span>
                             <div className="clr-container">
@@ -79,7 +58,7 @@ const AdminProfilePage = () => {
                         <span>User Email</span>
                     </div>
                     <div className="dash-last">
-                        {loading ? "Loading" : <input type="text" name="email" defaultValue={userInfo?.email} autoComplete="true" />}
+                        {loading ? "Loading" : <p>{userInfo?.email}</p>}
                     </div>
                 </div>
                 <div className="dash-container">
@@ -87,7 +66,7 @@ const AdminProfilePage = () => {
                         <span>User Name</span>
                     </div>
                     <div className="dash-last">
-                        {loading ? "Loading" : <input type="text" name="username" defaultValue={userInfo?.name} autoComplete="true" />}
+                        {loading ? "Loading" : <p>{userInfo?.name}</p>}
                     </div>
                 </div>
                 <div className="dash-container">
@@ -98,7 +77,6 @@ const AdminProfilePage = () => {
                         <span>Dr. Fury</span>
                     </div>
                 </div>
-
                 <div className="dash-container">
                     <div className="dash-first">
                         <span>Display name publicly as</span>
@@ -110,8 +88,6 @@ const AdminProfilePage = () => {
                         </select>
                     </div>
                 </div>
-
-
                 <div className="dash-container">
                     <div className="dash-first">
                         <span>Profile Picture</span>
@@ -125,7 +101,8 @@ const AdminProfilePage = () => {
                         <span>New Password</span>
                     </div>
                     <div className="dash-last">
-                        <button onClick={handleChangePassword}>Set New Password</button>
+                        <input type="text" placeholder="enter new password" onChange={(e) => { setNewpassword(e.target.value) }} />
+                        <button disabled={!newPassword} onClick={handleChangePassword}>Set New Password</button>
                     </div>
                 </div>
                 <div className="dash-container">
@@ -133,10 +110,7 @@ const AdminProfilePage = () => {
                         <span>Sessions</span>
                     </div>
                     <div className="dash-last">
-                        <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                            e.preventDefault();
-                            handleLogout();
-                        }}>Log Out Everywhere Else</button>
+                        <button onClick={handleLogout}>Log Out Everywhere Else</button>
                     </div>
                 </div>
                 <div className="dash-container">

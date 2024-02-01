@@ -7,8 +7,10 @@ export const LOGOUT_URL = apiUrl + "logout"
 
 export const USER_URL = apiUrl + "user"
 export const GET_TEMPLATE_URL = apiUrl + "template/all"
+export const GET_ONE_TEMPLATE_URL = apiUrl + "template"
 export const CREATE_TEMPLATE_URL = apiUrl + "template/create"
 export const UPDATE_TEMPLATE_URL = apiUrl + "template/update"
+export const DELETE_TEMPLATE_URL = apiUrl + "template/delete"
 
 export const REFRESH_TOKEN_URL = apiUrl + "refresh-token"
 export const COOKIES_REMOVER_URL = apiUrl + "cookies-remover"

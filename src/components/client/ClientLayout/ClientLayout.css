@@ -1,10 +1,10 @@
 .client-body main{
-    padding: var(--spacer-2);
-    min-height: calc(100vh - 95px);
+    min-height: calc(100vh - 69px);
     display: flex;
     gap: var(--spacer);
+    background-color: var(--bg-primary);
 }
 
 .client-body section{
-    padding-block: var(--spacer);
+    padding-block: var(--spacer-2);
 }

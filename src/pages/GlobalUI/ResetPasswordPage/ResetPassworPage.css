@@ -2,6 +2,7 @@
     height: 100vh;
     display: grid;
     place-items: center;
+    background-color: var(--bg-primary);
 }
 
 
@@ -17,10 +18,10 @@
 
 .frg-container input {
     width: 100%;
-    padding-block: var(--s);
-    padding-inline: var(--l);
+    padding-block: var(--size-m);
+    padding-inline: var(--size-l);
     border: none;
-    border-radius: 4px;
+    border-radius: var(--size-s);
 }
 
 
