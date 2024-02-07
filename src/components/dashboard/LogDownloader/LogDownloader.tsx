@@ -1,7 +1,9 @@
+import { ERR_LOGS_DOWNLOAD_URL, REQ_LOGS_DOWNLOAD_URL } from "../../../utils/constant";
+
 const LogDownloader = () => {
     const downloadReqLogs = async () => {
         try {
-            const res = await fetch('http://localhost:5000/download-all-reqlogs', {
+            const res = await fetch(REQ_LOGS_DOWNLOAD_URL, {
                 credentials: "include"
             });
             if (res.status === 403 || res.status === 404) return
@@ -20,7 +22,7 @@ const LogDownloader = () => {
 
     const downloadErrLogs = async () => {
         try {
-            const res = await fetch('http://localhost:5000/download-all-errlogs', {
+            const res = await fetch(ERR_LOGS_DOWNLOAD_URL, {
                 credentials: "include"
             });
             if (res.status === 403 || res.status === 404) return

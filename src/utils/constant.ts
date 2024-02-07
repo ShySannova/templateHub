@@ -27,5 +27,7 @@ export const RESET_PASSWORD_URL = apiUrl + "reset-password"
 export const CHANGE_PASSWORD_URL = apiUrl + "change-password"
 export const VERIFY_PASSWORD_RESET_URL = apiUrl + "verify-password-reset-page"
 
+export const REQ_LOGS_DOWNLOAD_URL = apiUrl + "download-all-reqlogs"
+export const ERR_LOGS_DOWNLOAD_URL = apiUrl + "download-all-errlogs"
 
 export const roles: Role[] = ["Admin", "Developer", "Editor", "Author"]
