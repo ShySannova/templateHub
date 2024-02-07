@@ -1,20 +1,21 @@
 import { Navigate } from "react-router-dom";
 import { ReactNode } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../store/rootReducer";
 import usePersist from "../../../hooks/usePersist";
+import useRoleAccess from "../../../hooks/useRoleAccess";
 
 const ProtectPrivate: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const isAuthenticated = useSelector(
-        (state: RootState) => state.auth.isAuthenticated
-    );
+
     const [persist] = usePersist()
 
-    if (!persist && !isAuthenticated) return <Navigate to="/login" />
+    const { auth, dashboardAccess, userAccess } = useRoleAccess();
 
-    if (!persist && isAuthenticated) return children
+    if (!persist && !auth.isAuthenticated) return <Navigate to="/login" />
 
-    if (persist || isAuthenticated) return children
+    if (!persist && auth.isAuthenticated && dashboardAccess) return children
+
+    if (persist && dashboardAccess) return children
+
+    if (persist && !dashboardAccess && userAccess) return <Navigate to="/login" />
 
 };
 

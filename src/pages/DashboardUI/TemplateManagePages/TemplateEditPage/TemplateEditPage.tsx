@@ -1,6 +1,6 @@
 import React from 'react'
 import "./TemplateEditPage.css"
-import useTemplateEditHOH from '../../../hooks/useTemplateEditHOH';
+import useTemplateEditHOH from '../../../../hooks/useTemplateEditHOH';
 
 
 const TemplateEditPage: React.FC = () => {

@@ -3,15 +3,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import useLogout from '../../../hooks/useLogout';
 import { UserInfo } from '../../../utils/types';
+import useRoleAccess from "../../../hooks/useRoleAccess";
 
 
 interface SidebarProps {
     userInfo?: UserInfo | null;
-    loading: boolean;
 }
 
 
-const Sidebar: React.FC<SidebarProps> = ({ userInfo, loading }) => {
+const Sidebar: React.FC<SidebarProps> = ({ userInfo }) => {
+
+    const { adminAccess, developerAccess } = useRoleAccess()
 
     const { handleLogout } = useLogout()
 
@@ -22,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ userInfo, loading }) => {
                     <img src="#" alt="" />
                 </div>
                 <h2 className="username">
-                    {loading ? "loading" : <p>{userInfo?.name}</p>}
+                    <p>{userInfo?.name}</p>
                 </h2>
             </div>
 
@@ -30,8 +32,22 @@ const Sidebar: React.FC<SidebarProps> = ({ userInfo, loading }) => {
             <nav>
                 <ul className="links">
                     <li>
+                        <NavLink to={'/'} end>home</NavLink>
+                    </li>
+                    <li>
                         <NavLink to={'/dashboard'} end>Dashboard</NavLink>
                     </li>
+                    {adminAccess || developerAccess ?
+                        <>
+                            <li>
+                                <NavLink to={'/dashboard/employee/create'} end>Add Employee</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={'/dashboard/employees'} end>Employees</NavLink>
+                            </li>
+                        </> : null
+                    }
+
                     <li>
                         <NavLink to={'/dashboard/templates'} end>All Templates</NavLink>
                     </li>

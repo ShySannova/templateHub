@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import useToast from './useToast'
 import { GET_ONE_TEMPLATE_URL, UPDATE_TEMPLATE_URL } from '../utils/constant'
 import { Template } from '../utils/types'
@@ -9,18 +9,37 @@ import useRefresh from './useRefresh'
 const useUpdateTemplate = () => {
     const location = useLocation();
     const [template, setTemplate] = useState(location?.state?.template)
+    const navigate = useNavigate()
+    const [newTemplate, setNewTemplate] = useState<Template>(template)
+    const { handleToast } = useToast()
+    const { handleRefresh } = useRefresh();
+
 
     const id = useParams().id
 
     const getTemplate = useCallback(async () => {
         try {
             const res = await fetch(`${GET_ONE_TEMPLATE_URL}/${id}`, { credentials: "include" })
-            const data = await res.json()
-            setTemplate(data.template)
+
+            if (res.ok) {
+                const data = await res.json();
+                if (data.success) {
+                    setTemplate(data.template)
+                }
+            } else if (res.status === 401) {
+                const success = await handleRefresh();
+                if (success) {
+                    return getTemplate()
+                } else {
+                    console.error("refresh-token failed")
+                }
+            } else {
+                navigate("/dashboard/templates")
+            }
         } catch (error) {
             console.error(error)
         }
-    }, [id])
+    }, [id, handleRefresh, navigate])
 
 
     useEffect(() => {
@@ -29,11 +48,6 @@ const useUpdateTemplate = () => {
             getTemplate();
         }
     }, [location.state, getTemplate]);
-
-
-    const [newTemplate, setNewTemplate] = useState<Template>(template)
-    const { handleToast } = useToast()
-    const { handleRefresh } = useRefresh();
 
 
     const updateTemplate = async (): Promise<boolean> => {

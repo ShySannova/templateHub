@@ -6,8 +6,11 @@ import { LOGIN_URL } from "../utils/constant";
 import useCookiesRemover from "./useCookiesRemover";
 import usePersist from "./usePersist";
 import { RootState } from "../store/rootReducer";
+import { useNavigate } from "react-router-dom";
 
 const useLogin = () => {
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isTrusted, setIsTrusted] = useState(false);
@@ -43,6 +46,9 @@ const useLogin = () => {
                 dispatch(setAuthenticated({ isAuthenticated: true, userInfo }))
                 handleToast(true, data.message);
 
+            } else if (res.status === 302) {
+                const data = await res.json();
+                navigate(data.url, { state: { email } })
             } else {
                 handleToast(true, "Login failed");
                 console.error("Login failed:", res.statusText);

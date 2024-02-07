@@ -1,4 +1,4 @@
-import useTemplateCreateHOH from "../../../hooks/useTemplateCreateHOH";
+import useTemplateCreateHOH from "../../../../hooks/useTemplateCreateHOH";
 import "./CreateTemplatePage.css"
 
 import React, { useRef } from "react";

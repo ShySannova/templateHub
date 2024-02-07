@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import useLogout from "../../../hooks/useLogout";
+import useRoleAccess from "../../../hooks/useRoleAccess";
 
 const Header = () => {
 
-
+    const { userAccess, dashboardAccess } = useRoleAccess();
+    const { handleLogout } = useLogout()
 
     return (
         <header>
@@ -23,9 +26,13 @@ const Header = () => {
                         <li>
                             <NavLink to={"/about"}>about</NavLink>
                         </li>
+
                         <li>
-                            <NavLink className="btn" to={"/login"}>Login</NavLink>
+                            {dashboardAccess ? <Link to={"/dashboard"}>Dashboard</Link> : userAccess ? <Link to={"/profile"}>Profile</Link> : <NavLink className="btn" to={"/login"}>Login</NavLink>}
                         </li>
+                        {userAccess && <li>
+                            <button onClick={handleLogout}>logout</button>
+                        </li>}
                     </ul>
                 </div>
             </nav>

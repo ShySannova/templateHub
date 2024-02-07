@@ -3,7 +3,11 @@ import React from 'react'
 
 const AboutPage: React.FC = () => {
     return (
-        <main className="about">AboutPage</main>
+        <main className="about">
+            <section className="container">
+                AboutPage
+            </section>
+        </main>
     )
 }
 

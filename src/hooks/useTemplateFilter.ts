@@ -100,7 +100,10 @@ const useTemplateFilter = () => {
             if (res.ok) {
                 const data = await res.json();
                 handleToast(true, data.message);
-                if (data.success) return true
+                if (data.success) {
+                    navigate("/dashboard/templates")
+                    return true
+                }
                 return false
             } else {
                 if (res.status === 401) {
@@ -113,6 +116,8 @@ const useTemplateFilter = () => {
                     }
                 }
             }
+            const data = await res.json();
+            handleToast(true, data.message)
             return false
         }
         catch (err) {

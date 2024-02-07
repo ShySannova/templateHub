@@ -33,4 +33,13 @@ export interface UserInfo {
     email?: string;
 }
 
+export interface EmployeeInfo extends UserInfo {
+    roles: {
+        Editor: boolean,
+        Author: boolean,
+    }
+}
+
+export type Role = "Admin" | "Developer" | "Editor" | "Author" | "User"
+
 export type OutletContextType = [UserInfo, boolean];

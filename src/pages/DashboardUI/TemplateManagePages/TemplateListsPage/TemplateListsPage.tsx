@@ -1,7 +1,7 @@
 import React from 'react'
 import "./TemplateListsPage.css"
 import { Link, NavLink } from 'react-router-dom';
-import useTemplateFilter from '../../../hooks/useTemplateFilter';
+import useTemplateFilter from '../../../../hooks/useTemplateFilter';
 
 
 
