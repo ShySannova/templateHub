@@ -11,9 +11,9 @@
 
 
 :root {
-    --bg-primary: #F4E7E7; /* Light mode background color */
+    --bg-primary: #f9f9f9; /* Light mode background color */
     --clr-primary: #2B2B2B; /* Light mode text color */
-    --bg-secondary: #D5ECC2 ; /* Light mode secondary background color */
+    --bg-secondary: #7348bf; /* Light mode secondary background color */
     --clr-secondary: #ffffff; /* Light mode secondary text color */
     --clr-rgba: rgba(0, 0, 0, 0.1)
     --box-shadow: 0 2px 4px var(--clr-rgba); /* Box shadow for cards */

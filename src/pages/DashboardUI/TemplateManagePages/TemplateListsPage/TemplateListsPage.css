@@ -1,9 +1,10 @@
-.table-box{
+.table-box {
     display: flex;
     flex-direction: column;
     gap: var(--spacer);
 }
-.table-filter-stauts{
+
+.table-filter-stauts {
     display: flex;
     gap: var(--spacer);
 }
@@ -14,7 +15,8 @@
     border: 2px solid var(--clr-accent);
     border-collapse: collapse;
 }
-.table-container th{
+
+.table-container th {
     font-size: 14px;
     font-weight: 400;
 }
@@ -31,7 +33,7 @@
 }
 
 
-.table-body{
+.table-body {
     border: 2px solid var(--clr-accent);
 }
 
@@ -39,7 +41,7 @@
     vertical-align: middle;
 }
 
-.template-title{
+.template-title {
     font-size: 14px;
     font-weight: var(--fw-bold);
 }
@@ -48,11 +50,11 @@ td.titile-td {
     max-width: 230px;
 }
 
-.template-action{
+.template-action {
     font-size: 13px;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background-color: var(--bg-primary);
 }
 
@@ -68,6 +70,21 @@ tr:nth-child(even){
 
 .action-cell {
     text-align: center;
+}
+
+svg.red {
+    color: red;
+    font-size: 20px;
+}
+
+svg.yellow {
+    color: yellow;
+    font-size: 20px;
+}
+
+svg.green {
+    color: green;
+    font-size: 20px;
 }
 
 .action-cell a,
@@ -89,17 +106,16 @@ tr:nth-child(even){
 .template-action .published-btn,
 .template-action .draft-btn,
 .template-action .trash-btn,
-.template-action .delete-btn
-{
-   cursor: pointer;
+.template-action .delete-btn {
+    cursor: pointer;
 }
 
 .template-action .published-btn:hover,
 .template-action .draft-btn:hover,
-.template-action .trash-btn:hover{
+.template-action .trash-btn:hover {
     color: gray;
 }
 
-.template-action .delete-btn:hover{
+.template-action .delete-btn:hover {
     color: red;
 }

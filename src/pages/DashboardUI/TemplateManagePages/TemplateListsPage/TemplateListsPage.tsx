@@ -2,6 +2,7 @@ import React from 'react'
 import "./TemplateListsPage.css"
 import { Link, NavLink } from 'react-router-dom';
 import useTemplateFilter from '../../../../hooks/useTemplateFilter';
+import { GoDotFill } from "react-icons/go";
 
 
 
@@ -86,7 +87,7 @@ const TemplateListsPage: React.FC = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        {template?.status === "trash" ? <span>Red</span> : template?.status === "published" ? <span>Green</span> : <span>Yellow</span>}
+                                        {template?.status === "trash" ? <GoDotFill className='red' /> : template?.status === "published" ? <GoDotFill className='green' /> : <GoDotFill className='yellow' />}
                                     </td>
                                 </tr>
                             )

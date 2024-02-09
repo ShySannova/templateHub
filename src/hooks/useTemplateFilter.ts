@@ -4,7 +4,7 @@ import useRefresh from "./useRefresh";
 import useToast from "./useToast";
 import { useCallback, useEffect, useState } from "react";
 import { Template } from "../utils/types";
-import useTemplate from "./useTemplate";
+import useUserTemplate from "./useUserTemplate";
 
 
 const useTemplateFilter = () => {
@@ -14,7 +14,7 @@ const useTemplateFilter = () => {
     const { handleRefresh } = useRefresh();
     const params = useParams();
 
-    const { templates }: { templates: Template[] } = useTemplate(params);
+    const { templates }: { templates: Template[] } = useUserTemplate(params);
     const [newTemplate, setNewTemplate] = useState(templates);
 
     const filter = useCallback((status: string) => {
