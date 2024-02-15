@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { GET_TEMPLATE_URL } from "../utils/constant";
+import { GET_PUBLISHED_TEMPLATE_URL } from "../utils/constant";
 import { Template } from "../utils/types";
 import { Params } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const useTemplate = (params: Readonly<Params<string>>): UseTemplate => {
 
   const getTemplates = useCallback(async (): Promise<boolean> => {
     try {
-      const res = await fetch(GET_TEMPLATE_URL, { credentials: "include" });
+      const res = await fetch(GET_PUBLISHED_TEMPLATE_URL, { credentials: "include" });
       if (res.ok) {
         const data = await res.json();
         if (data.success) {

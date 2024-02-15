@@ -29,7 +29,7 @@ const useTemplateFilter = () => {
                 return temp.status === status
             }
             else {
-                return "halwa"
+                return "All"
             }
         })
         setNewTemplate(newTemp)
