@@ -12,7 +12,7 @@ export const VERIFY_ACCOUNT_URL = apiUrl + "verify-account"
 export const REQUEST_NEW_VERIFICATION_CODE_URL = apiUrl + "request-new-verification-code"
 
 export const USER_URL = apiUrl + "user"
-export const GET_EMPLOYEES_URL = apiUrl + "user/employees"
+export const GET_EMPLOYEES_URL = apiUrl + "employee/all"
 export const SET_EMPLOYEE_ROLE_URL = apiUrl + "employee/add-role"
 export const GET_TEMPLATE_URL = apiUrl + "template/all"
 export const GET_PUBLISHED_TEMPLATE_URL = apiUrl + "template/all/published"

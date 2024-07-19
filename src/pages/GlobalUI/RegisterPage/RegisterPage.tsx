@@ -1,8 +1,8 @@
-import "./RegisterPage.css";
 import { useSelector } from "react-redux";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { RootState } from "../../../store/rootReducer";
 import useRegister from "../../../hooks/useRegister";
+import Register from "../../../components/global/Register/Register";
 
 const RegisterPage = () => {
     const isAuthenticated = useSelector(
@@ -23,71 +23,16 @@ const RegisterPage = () => {
     if (isAuthenticated) return <Navigate to={"/dashboard"} />;
 
     return (
-        <main className="auth">
+        <Register {...{
+            name,
+            email,
+            password,
+            setName,
+            setEmail,
+            setPassword,
+            handleRegister
+        }} />
 
-            <form id="sign_in">
-                <h2>Register</h2>
-                <div className="input-box">
-                    {/* <!--Email and password input are contained here and within--> */}
-                    <div className="username">
-                        <input
-                            id="username"
-                            type="text"
-                            onChange={(e) => {
-                                e.preventDefault();
-                                setName(e.target.value);
-                            }}
-                            required
-                        />
-                        <label htmlFor="username">Username</label>
-                    </div>
-                    <div className="email">
-                        <input
-                            id="email"
-                            type="email"
-                            onChange={(e) => {
-                                e.preventDefault();
-                                setEmail(e.target.value);
-                            }}
-                            autoComplete="true"
-                            required
-                        />
-                        <label htmlFor="email">Email</label>
-                    </div>
-
-                    <div className="password">
-                        <input
-                            id="confirm_password"
-                            type="password"
-                            onChange={(e) => {
-                                e.preventDefault();
-                                setPassword(e.target.value);
-                            }}
-                            required
-                        />
-                        <label htmlFor="confirm_password">Password</label>
-                    </div>
-                </div>
-
-                <button
-                    type="submit"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleRegister();
-                    }}
-                    disabled={!name || !email || !password}>
-                    Register
-                </button>
-
-                <p>
-                    Already have an account,
-                    &nbsp;
-                    <Link to={"/login"}>Sign In</Link>
-                    &nbsp;
-                    here
-                </p>
-            </form>
-        </main>
 
     );
 };

@@ -3,6 +3,7 @@
     display: flex;
     gap: var(--spacer);
     background-color: var(--bg-primary);
+    padding-inline: var(--spacer-2);
 }
 
 .client-body section{

@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: center;
     gap: var(--spacer);
-    box-shadow: var(--box-shadow);
 }
 .auth form h2 {
     font-size: var(--f-heading);
@@ -120,6 +119,7 @@
     border-color: inherit;
 }
 
+.input-box .employerId,
 .input-box .username{
     /***This is input container***/
     position: relative;
@@ -128,6 +128,7 @@
     flex-direction: column;
 }
 
+.input-box .employerId label,
 .input-box .username label{
     position: absolute;
     width: 100%;

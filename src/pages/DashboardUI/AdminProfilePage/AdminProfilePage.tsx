@@ -101,7 +101,7 @@ const AdminProfilePage = () => {
                         <span>New Password</span>
                     </div>
                     <div className="dash-last">
-                        <input type="text" placeholder="enter new password" onChange={(e) => { setNewpassword(e.target.value) }} />
+                        <input type="text" name="newPassword" placeholder="enter new password" onChange={(e) => { setNewpassword(e.target.value) }} />
                         <button disabled={!newPassword} onClick={handleChangePassword}>Set New Password</button>
                     </div>
                 </div>

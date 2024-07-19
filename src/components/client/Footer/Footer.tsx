@@ -15,7 +15,7 @@ const Footer = () => {
                             <li><NavLink to={"/about"}>about us</NavLink></li>
                             <li><NavLink to={"/services"}>our services</NavLink></li>
                             <li><NavLink to={"/privacy"}>privacy policy</NavLink></li>
-                            <li><NavLink to={"/program"}>affiliate program</NavLink></li>
+                            <li><NavLink to={"/register-developer"}>Register As Developer</NavLink></li>
                         </ul>
                     </div>
                     <div className="footer-col">

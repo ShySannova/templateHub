@@ -195,6 +195,14 @@ const router = createBrowserRouter([
                 )
             },
             {
+                path: "/register-developer",
+                element: (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <RegisterPage />
+                    </Suspense>
+                )
+            },
+            {
                 path: "/forgot-password",
                 element: (
                     <Suspense fallback={<div>Loading...</div>}>

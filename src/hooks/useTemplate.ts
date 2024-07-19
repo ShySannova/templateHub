@@ -4,12 +4,12 @@ import { Template } from "../utils/types";
 import { Params } from "react-router-dom";
 
 interface UseTemplate {
-  templates: Template[];
+  templates: Template[] | null;
   getTemplates: () => Promise<boolean>;
 }
 
 const useTemplate = (params: Readonly<Params<string>>): UseTemplate => {
-  const [templates, setTemplates] = useState<Template[]>([]);
+  const [templates, setTemplates] = useState<Template[] | null>(null);
 
 
   const getTemplates = useCallback(async (): Promise<boolean> => {

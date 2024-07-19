@@ -59,7 +59,7 @@ const useTemplateCreate = () => {
 
     const handleSourceCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
         setTemplate((prev) => {
-            return { ...prev, sourceCode: { ...prev.sourceCode, frontend: e?.target?.value } }
+            return { ...prev, sourceCode: { ...prev.sourceCode, [e.target.name]: e?.target?.value } }
         })
     }
     const handleBooleanChange = (e: ChangeEvent<HTMLInputElement>) => {

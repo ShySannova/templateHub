@@ -59,6 +59,7 @@ const TemplateEditPage: React.FC = () => {
                                         <input
                                             type="text"
                                             placeholder="Enter Badge"
+                                            name='badge'
                                             defaultValue={template?.badge}
                                             onChange={(e) => {
                                                 setNewTemplate((prev) => {
@@ -93,7 +94,7 @@ const TemplateEditPage: React.FC = () => {
                                         <input
                                             type="text"
                                             placeholder="frontend source code"
-                                            name="sourceCode"
+                                            name="frontend"
                                             defaultValue={template?.sourceCode?.frontend}
                                             onChange={(e) => {
                                                 setNewTemplate((prev) => {
@@ -104,7 +105,7 @@ const TemplateEditPage: React.FC = () => {
                                         <input
                                             type="text"
                                             placeholder="backend source code"
-                                            name="sourceCode"
+                                            name="backend"
                                             defaultValue={template?.sourceCode?.backend}
                                             onChange={(e) => {
                                                 setNewTemplate((prev) => {

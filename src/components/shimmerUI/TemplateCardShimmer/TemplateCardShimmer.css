@@ -1,0 +1,76 @@
+.product-card-shimmer{
+    width: 300px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-container-shimmer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.badge-shimmer{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 40px;
+    height: 20px;
+    background-color: gray;
+}
+
+.product-thumb-shimmer{
+    display: flex;
+    height: 150px;
+    overflow: hidden;
+    background-color: darkslategray;
+}
+
+.product-details-shimmer{
+    padding-block: var(--spacer-2);
+    padding-inline: var(--spacer);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+}
+
+.text-shimmer{
+    width:50%;
+    height: 20px;
+    background-color: gray;
+}
+
+.para-shimmer{
+    width: 80%;
+    height: 20px;
+    background-color: gray;
+}
+
+.product-bottom-shimmer{
+    overflow: hidden;
+    border-top: 1px solid var(--clr-secondary);
+    padding-block-start:var(--spacer);
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-price-shimmer{
+    width: 30%;
+    height: 20px;
+    background-color: gray;
+}
+
+.product-wishlist-shimmer{
+    width: 30px;
+    height: 20px;
+    background-color: gray;
+}
+
+.live-url-shimmer{
+    align-self: center;
+    background-color: gray;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 20px;
+}

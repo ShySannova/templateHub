@@ -47,6 +47,7 @@ const CreateTemplatePage: React.FC = () => {
                                         <input
                                             type="text"
                                             placeholder="Enter Badge"
+                                            name="badge"
                                             onChange={handleInputChange}
                                         />
                                         <input
@@ -66,14 +67,14 @@ const CreateTemplatePage: React.FC = () => {
                                         <input
                                             type="text"
                                             placeholder="frontend source code"
-                                            name="sourceCode"
+                                            name="frontend"
                                             onChange={handleSourceCodeChange}
                                         />
                                         <input
                                             type="text"
                                             placeholder="backend source code"
-                                            name="sourceCode"
-                                            onChange={handleInputChange}
+                                            name="backend"
+                                            onChange={handleSourceCodeChange}
                                         />
                                     </div>
 

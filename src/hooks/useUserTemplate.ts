@@ -19,8 +19,9 @@ const useTemplate = (params: Readonly<Params<string>>): UseTemplate => {
 
   const getTemplates = useCallback(async (): Promise<boolean> => {
     try {
-      const res = adminAccess ? await fetch(GET_TEMPLATE_URL, { credentials: "include" }) : await fetch(`${GET_USER_TEMPLATE_URL}/${auth?.userInfo?._id}`, { credentials: "include" })
+      const handleUrl = adminAccess ? GET_TEMPLATE_URL : `${GET_USER_TEMPLATE_URL}/${auth?.userInfo?._id}`;
 
+      const res = await fetch(handleUrl, { credentials: "include" })
       if (res.ok) {
         const data = await res.json();
         if (data.success) {
@@ -30,7 +31,6 @@ const useTemplate = (params: Readonly<Params<string>>): UseTemplate => {
         return false
       } else if (res.status === 404) {
         setTemplates([])
-        console.log("no templates")
         return false
       }
       return false

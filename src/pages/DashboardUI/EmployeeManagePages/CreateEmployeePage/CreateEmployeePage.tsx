@@ -6,9 +6,11 @@ import useRoleAccess from "../../../../hooks/useRoleAccess";
 
 const CreateEmployeePage = () => {
     const {
+        employer,
         name,
         email,
         password,
+        setEmployer,
         setName,
         setEmail,
         setPassword,
@@ -28,6 +30,22 @@ const CreateEmployeePage = () => {
             <h2>Register Employee</h2>
             <div className="input-box">
                 {/* <!--Email and password input are contained here and within--> */}
+                {adminAccess ?
+                    <div className="employerId">
+                        <input
+                            id="employerId"
+                            type="text"
+                            onChange={(e) => {
+                                e.preventDefault();
+                                setEmployer(e.target.value);
+                            }}
+                            required
+                        />
+                        <label htmlFor="employerId">Employer-Id</label>
+                    </div>
+                    : null
+                }
+
                 <div className="username">
                     <input
                         id="username"
@@ -36,6 +54,7 @@ const CreateEmployeePage = () => {
                             e.preventDefault();
                             setName(e.target.value);
                         }}
+                        autoComplete="true"
                         required
                     />
                     <label htmlFor="username">Username</label>
@@ -74,7 +93,7 @@ const CreateEmployeePage = () => {
                     e.preventDefault();
                     handleEmployeeRegister();
                 }}
-                disabled={!name || !email || !password}>
+                disabled={adminAccess ? !employer : null || !name || !email || !password}>
                 Register
             </button>
 
