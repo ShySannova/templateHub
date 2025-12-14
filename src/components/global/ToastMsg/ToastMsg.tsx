@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "./ToastMsg.css";
-import { RootState } from "../../store/rootReducer";
+import { RootState } from "../../../store/rootReducer";
 
 const ToastMsg: React.FC = () => {
     const isVisible = useSelector((state: RootState) => state.toast.isVisible);

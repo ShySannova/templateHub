@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 /* === css reset === */
 * ,
 *::after,
@@ -11,10 +10,10 @@
 
 
 :root {
-    --bg-primary: #ffffff; /* Light mode background color */
-    --clr-primary: #333333; /* Light mode text color */
-    --bg-secondary: #ffcc00; /* Light mode secondary background color */
-    --clr-secondary: #0066cc; /* Light mode secondary text color */
+    --bg-primary: #F4E7E7; /* Light mode background color */
+    --clr-primary: #2B2B2B; /* Light mode text color */
+    --bg-secondary: #D5ECC2 ; /* Light mode secondary background color */
+    --clr-secondary: #ffffff; /* Light mode secondary text color */
     --clr-rgba: rgba(0, 0, 0, 0.1)
     --box-shadow: 0 2px 4px var(--clr-rgba); /* Box shadow for cards */
     
@@ -29,14 +28,15 @@
     --fw-normal: 400; /* Font weight for normal text */
     --fw-bold: 700; /* Font weight for bold text */
     
-    --clr-imp: #e60000; /* Color for important text */
-    --clr-active: #cc3300; /* Color for active links */
-    --clr-accent: #4CAF50; /* Color for call-to-action elements */
-    --clr-accent-hover:#4caf4fce;
+    --clr-imp: #FF3E4E; /* Color for important text */
+    --clr-active: #487BFF; /* Color for active links */
+    --clr-accent: #FFBF00; /* Color for call-to-action elements */
+    --clr-accent-hover:#FFD700;
+    --clr-tag: #99a3a4;
 
-    --s: .625rem; /* === 10px in rem === */
-    --m: 0.9375rem; /* === 15px in rem === */
-    --l: 1.25rem; /* === 20px in rem === */
+    --size-s: .5rem; /* === 10px in rem === */
+    --size-m: 1rem; /* === 15px in rem === */
+    --size-l: 2rem; /* === 20px in rem === */
   
     /* ... other variables ... */
   }
@@ -44,17 +44,18 @@
   /* Media query for dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-primary: #1a1a1a; /* Dark mode background color */
+        --bg-primary: #1f1f1f; /* Dark mode background color */
         --clr-primary: #ffffff; /* Dark mode text color */
-        --bg-secondary: #ffcc00; /* Dark mode secondary background color */
-        --clr-secondary: #0066cc; /* Dark mode secondary text color */
+        --bg-secondary: #4a4a4a;; /* Dark mode secondary background color */
+        --clr-secondary: #b3b3b3; /* Dark mode secondary text color */
         --clr-rgba: rgba(255, 255, 255, 0.1);
         --box-shadow: 0 2px 4px var(--clr-rgba); /* Adjust shadow color for dark mode */
         
         --clr-imp: #ff6666; /* Color for important text in dark mode */
         --clr-active: #ff9900; /* Color for active links in dark mode */
-        --clr-accent: #4CAF50; /* Color for call-to-action elements in dark mode */
-        --clr-accent-hover:#4caf4fa8;
+        --clr-accent: #008080; /* Color for call-to-action elements in dark mode */
+        --clr-accent-hover:#008080a8;
+        --clr-tag: #bdc3c7;
         
     }
 }
@@ -90,9 +91,9 @@ p {
 button,
 .btn {
     background-color: var(--clr-accent);
-    color: #ffffff; /* White text on cta button */
-    padding-block: var(--s);
-    padding-inline: var(--l);
+    color: var(--clr-secondary); /* White text on cta button */
+    padding-block: var(--size-s);
+    padding-inline: var(--size-l);
     border: 1px solid;
     border-color: var(--clr-accent);
     font-size: 1em;
@@ -107,9 +108,21 @@ button:hover,
     background-color: var(--clr-accent-hover);
 }
 
+button:disabled {
+    background-color: gray;
+    cursor: no-drop;
+}
+
+button:disabled:hover {
+    background-color: gray;
+    cursor: no-drop;
+    border-color: inherit;
+}
+
 /* === reset for link default style === */
 a{
     text-decoration: none;
+    color: var(--clr-tag);
 }
 
 a.active{
@@ -127,7 +140,7 @@ ul{
 
 .auth{
     min-height: 100vh;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     display: flex;
     justify-content: center;
     align-items: center;

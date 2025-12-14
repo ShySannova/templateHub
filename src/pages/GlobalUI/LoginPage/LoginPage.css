@@ -2,8 +2,8 @@
     width: 22rem;
     height: 35rem;
     padding: var(--spacer);
-    border: 2px solid var(--bg-primary);
-    background-color: var(--bg-primary);
+    border: 2px solid var(--bg-secondary);
+    background-color: var(--bg-secondary);
     color: inherit;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
     /* background-color: yellow; */
     justify-content: flex-start;
     align-items: center;
-    gap: var(--s);
+    gap: var(--size-s);
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -59,12 +59,12 @@
     top: 0px;
     transition: 0.5s;
     color: var(--clr-primary);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     display: flex;
     align-items: center;
     font-size: 1.1em;
     padding-block: .25rem;
-    padding-inline: var(--m);
+    padding-inline: var(--size-m);
     border: 2px solid var(--clr-accent);
 }
 
@@ -72,8 +72,8 @@
     background-color: transparent;
     color: var(--clr-neutral);
     border: 2px solid var(--clr-accent);
-    padding-block: var(--s);
-    padding-inline: var(--m);
+    padding-block: var(--size-m);
+    padding-inline: var(--size-m);
 }
 
 /***A quick validation that turns border green when input is valid***/
@@ -87,7 +87,7 @@
     height: fit-content;
     transform: translateY(-50%);
     top: 0;
-    left: var(--s);
+    left: var(--size-s);
     font-size: 0.8em;
     /* background-color: var(--bg-clr-mode-secondary); */
     border-radius: 5px;
@@ -105,8 +105,8 @@
     font-size: var(--m);
     letter-spacing: 0.1em;
 }
-.auth form p a {
-    color: var(--clr-accent);
+.auth form p a:hover {
+    text-decoration: underline;
 }
 
 .auth form button:disabled {

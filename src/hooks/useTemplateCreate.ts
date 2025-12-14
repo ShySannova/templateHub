@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { Template } from "../utils/types";
 import { useDispatch, useSelector } from "react-redux";
 import useToast from "./useToast";
@@ -14,30 +14,34 @@ const useTemplateCreate = () => {
 
     const dispatch = useDispatch()
     const { handleRefresh } = useRefresh();
+    const { _id } = useSelector((state: RootState) => state.auth?.userInfo);
+    useEffect(() => {
+        setTemplate(prevTemplate => ({
+            ...prevTemplate,
+            user: { _id },
+        }));
+    }, [_id]);
 
-    const {_id} = useSelector(
-        (state: RootState) => state.auth.userInfo
-    );
 
- 
 
-    const [template, setTemplate] = useState<Template>({
-        user:{_id} ,
+    const [template, setTemplate] = useState<Partial<Template>>({
+        user: { _id },
         title: "",
-        badge: "",
-        tech: "",
-        responsive: false,
-        image: "",
-        status: "",
-        stacks: "",
         url: "",
+        image: "",
+        badge: "",
+        sourceCode: {
+            frontend: "",
+            backend: ""
+        },
         metaTitle: "",
         metaDescription: "",
-        keywords: "",
+        features: [],
+        keywords: [],
+        stacks: [],
+        tech: [],
         description: "",
-        features: "",
-        price: "",
-        discount: 0,
+
         images: [
             "https://upload.wikimedia.org/wikipedia/en/c/cc/Agoda_mainlogo_stack_positive_ai_Main_Logo.jpg",
             "https://public.bnbstatic.com/image/cms/blog/20220215/56e2ce27-0276-408f-ad55-2fe85ad0cb68.png"
@@ -48,6 +52,22 @@ const useTemplateCreate = () => {
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => { setTemplate((prev) => ({ ...prev, [e.target.name]: e.target.value })) };
 
+    const handleIntegerChange = (
+        e: ChangeEvent<HTMLInputElement>
+    ) => { setTemplate((prev) => ({ ...prev, [e.target.name]: Number(e.target.value) })) };
+
+
+    const handleSourceCodeChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTemplate((prev) => {
+            return { ...prev, sourceCode: { ...prev.sourceCode, [e.target.name]: e?.target?.value } }
+        })
+    }
+    const handleBooleanChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTemplate((prev) => {
+            return { ...prev, responsive: e?.target?.checked }
+        })
+    }
+
     // const addImage = (imageUrl: string) => {
     //     if (imageUrl.trim() !== "") {
     //         setTemplate((prev) => ({
@@ -57,7 +77,7 @@ const useTemplateCreate = () => {
     //     }
     // };
 
-    const createTemplate = async (): Promise<boolean> => {
+    const handleCreateTemplate = async (): Promise<boolean> => {
         console.log(template)
         try {
             const res = await fetch(CREATE_TEMPLATE_URL, {
@@ -72,19 +92,20 @@ const useTemplateCreate = () => {
             if (res.ok) {
                 const data = await res.json();
                 handleToast(true, data.message);
-                return true
+                if (data.success) return true
+                return false
             } else {
                 if (res.status === 401) {
                     const success = await handleRefresh();
                     if (success) {
-                        return createTemplate()
+                        return handleCreateTemplate()
                     } else {
                         console.error("refresh-token failed")
                         return false
                     }
                 }
             }
-            return true
+            return false
 
         } catch (error) {
             console.error("Error creating template:", error);
@@ -95,20 +116,7 @@ const useTemplateCreate = () => {
     };
 
 
-    const handleSubmit = async () => {
-        try {
-            const success = await createTemplate();
-            if (success) {
-                return true
-            }
-        } catch (error) {
-            console.error(error)
-            return false
-        }
-    };
-
-
-    return { template, handleInputChange,handleSubmit, createTemplate };
+    return { template, setTemplate, handleInputChange, handleIntegerChange, handleSourceCodeChange, handleBooleanChange, handleCreateTemplate };
 };
 
 export default useTemplateCreate;

@@ -1,0 +1,130 @@
+.table-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+}
+
+.table-filter-stauts {
+    display: flex;
+    gap: var(--spacer);
+}
+
+.table-container {
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--clr-accent);
+    border-collapse: collapse;
+}
+
+.table-container th {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.table-container th,
+.table-container td {
+    padding: var(--size-s);
+    text-align: left;
+}
+
+
+.table-header {
+    background-color: var(--clr-accent);
+}
+
+
+.table-body {
+    border: 2px solid var(--clr-accent);
+}
+
+.table-body td {
+    vertical-align: middle;
+}
+
+.template-title {
+    font-size: 14px;
+    font-weight: var(--fw-bold);
+}
+
+td.titile-td {
+    max-width: 230px;
+}
+
+.template-action {
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--bg-primary);
+}
+
+
+.table-footer {
+    background-color: var(--clr-accent);
+}
+
+.checkbox-cell input {
+    margin: 0;
+}
+
+
+.action-cell {
+    text-align: center;
+}
+
+svg.red {
+    color: red;
+    font-size: 20px;
+}
+
+svg.yellow {
+    color: yellow;
+    font-size: 20px;
+}
+
+svg.green {
+    color: green;
+    font-size: 20px;
+}
+
+.action-cell a,
+.action-cell button {
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--clr-accent);
+    border-radius: 3px;
+    cursor: pointer;
+    color: var(--clr-primary);
+}
+
+.action-cell a:hover,
+.action-cell button:hover {
+    background-color: var(--clr-accent-hover);
+}
+
+.template-action .published-btn,
+.template-action .draft-btn,
+.template-action .trash-btn,
+.template-action .delete-btn {
+    cursor: pointer;
+}
+
+.template-action .published-btn:hover,
+.template-action .draft-btn:hover,
+.template-action .trash-btn:hover {
+    color: gray;
+}
+
+.template-action .delete-btn:hover {
+    color: red;
+}
+
+.no-templates{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacer);
+}

@@ -12,21 +12,20 @@ const useLogout = () => {
 
     const handleLogout = async () => {
         try {
-            const res = await fetch(LOGOUT_URL,{credentials:"include"});
+            const res = await fetch(LOGOUT_URL, { credentials: "include" });
 
             if (res.ok) {
                 const data = await res.json();
                 navigate("/");
-                await new Promise(resolve => setTimeout(resolve, 2000));
                 dispatch(setAuthenticated({ isAuthenticated: false, userInfo: {} }));
                 localStorage.clear();
                 handleToast(true, data.message);
-               
+
             } else {
                 const errorMessage = await res.text();
                 console.error("Logout failed:", errorMessage);
                 handleToast(false, "Plz try again");
-                
+
             }
         } catch (error) {
             console.error("Error during logout:", error);

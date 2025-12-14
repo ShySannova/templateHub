@@ -1,0 +1,26 @@
+.employee-list .title{
+    font-size: var(--f-heading);
+}
+
+.employee-list-container{
+    display: flex;
+    flex-direction: column;
+    padding-block: var(--spacer);
+    padding-inline: var(--spacer);
+    gap: var(--spacer);
+}
+
+.employee-list-item{
+    display: flex;
+    align-items: center;
+    gap: var(--spacer);
+}
+
+.no-employees{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacer);
+}

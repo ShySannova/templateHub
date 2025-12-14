@@ -9,12 +9,13 @@ import Sidebar from "../Sidebar/Sidebar";
 const DashLayout: React.FC = () => {
 
 
-    const { loading, userInfo } = useUserInfo();
+
+    const { userInfo } = useUserInfo();
 
     return (
         <div className="dashboard-body dashboard">
-            <Sidebar userInfo={userInfo} loading={loading} />
-            <Outlet context={[userInfo, loading]} />
+            <Sidebar userInfo={userInfo} />
+            <Outlet context={[userInfo]} />
         </div>
     );
 };

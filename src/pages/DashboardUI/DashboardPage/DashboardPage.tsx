@@ -1,6 +1,14 @@
 import "./DashboardPage.css"
+import useRoleAccess from "../../../hooks/useRoleAccess";
+import LogDownloader from "../../../components/dashboard/LogDownloader/LogDownloader";
+
+
 
 const DashboardPage = () => {
+
+
+    const { adminAccess } = useRoleAccess()
+
     return (
         <main>
             <section className="dashpage">
@@ -8,6 +16,7 @@ const DashboardPage = () => {
                 <p>30 post</p>
 
                 <p>70comment</p>
+                {adminAccess ? <LogDownloader /> : null}
             </section>
         </main>
 
