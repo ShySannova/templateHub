@@ -93,7 +93,12 @@ const CreateEmployeePage = () => {
                     e.preventDefault();
                     handleEmployeeRegister();
                 }}
-                disabled={adminAccess ? !employer : null || !name || !email || !password}>
+                disabled={
+                    (adminAccess && !employer) ||
+                    !name ||
+                    !email ||
+                    !password
+                }>
                 Register
             </button>
 
